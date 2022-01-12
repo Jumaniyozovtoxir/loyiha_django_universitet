@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <h3>Guruhlar bo'limiga xush kelibsz</h3>
+        {%if root%}
+            {%for i in root%}
+        <div style="border: 1px dotted">
+         <h3>Kursant:<a href="{% url 'kursantlar' pk=i.id %}"> {{i}}</a></h3> </div>
+            {%endfor%}
+        {%else%}
+            {%for i in guruhcha%}
+                <div style="border: 1px dotted">
+         <h3>Guruh:<a href="{% url 'guruhlar' pk=i.id %}"> {{i}}</a></h3> </div>
+            {%endfor%}
+        {%endif%}
+
+</body>
+</html>
